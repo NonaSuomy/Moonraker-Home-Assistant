@@ -25,7 +25,7 @@ cp moonraker.yaml homeassistant/config/packages/moonraker.yaml
 Replace <moonraker-ip-address> with your ip in the moonraker.yaml file.
 
 ```
-sed -i 's/<moonraker-ip-address>/10.0.0.69/g' input.txt
+sed -i 's/<moonraker-ip-address>/10.0.0.69/g' homeassistant/config/packages/moonraker.yaml
 ```
 
 Restart Home Assistant then you should see the entities of your 3D Printer show up.
