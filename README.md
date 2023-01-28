@@ -123,7 +123,7 @@ Showing currently % of printing progress. Changes color depending on % of progre
 
 Using mini-graph-card component, to show graph of hotend and bed temp. [Code card](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/mini-graph-card.yaml)
 
-![image](https://user-images.githubusercontent.com/1906575/215294547-034c104a-59be-4757-9a4a-606bba3b7d7b.png)
+![image](https://user-images.githubusercontent.com/1906575/215294846-e06c71cd-b173-4740-9d7d-12c48e15591e.png)
 
 ## Thank you
 
