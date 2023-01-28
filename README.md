@@ -1,9 +1,61 @@
 # home-assistant-moonraker
-Integration between Moonraker and Home Assistant
+
+Integration between Moonraker and Home Assistant 
 
 ## Setup
 
+### Requirements
+
+- HACS (for installing custom component)
+- **@thosmasloven**'s [Lovelace Card Mod](https://github.com/thomasloven/lovelace-card-mod)
+- **@kalkih**'s [Mini Graph Card](https://github.com/kalkih/mini-graph-card)
+- **Sonoff S26** with **ESPHome** for powering the 3D printer on/off
+
+### HACS Install
+
+SSH into your Docker host and navigate to the folder location where you have the Home Assistant /config volume.
+
+Run the command below.
+
+```
+wget -O - https://get.hacs.xyz | bash -
+```
+
+The files will now be downloaded and put into the directory where the Home Assistant volume is mapped.
+
+Restart the docker
+
+```
+sudo docker restart homeassistant
+```
+
+Log in to Home Assistant.
+
+After Home Assistant connects, select Settings, then Devices & Services.
+
 Make a folder in your home assistant directory
+
+In the bottom right, select Add Integration.
+
+Search for HACS and select it.
+
+If you agree with everything, select all options and then Submit.
+
+Copy the code that Home Assistant provides and then select the link to sign into GitHub.
+
+Sign in to GitHub, and then paste in the code from the previous step.
+
+If you’d like to proceed, select Authorize HACS.
+
+HACS is now installed! It’s best to reboot your Docker host at this point.
+
+```
+sudo docker restart homeassistant
+```
+
+After Home Assistant loads back up, HACS will be fully configured and ready to use!
+
+### HA Packages Configuration
 
 ```
 mkdir homeassistant/config/packages
@@ -28,23 +80,55 @@ Replace <moonraker-ip-address> with your 3D Printer IP in the moonraker.yaml fil
 sed -i 's/<moonraker-ip-address>/10.0.0.69/g' homeassistant/config/packages/moonraker.yaml
 ```
 
-Restart Home Assistant then you should see the entities of your 3D Printer show up.
+Restart Home Assistant through the WebUI then you should see the entities of your 3D Printer show up.
 
-A lot of Template sensors and rest sensors to have all the information I need from Moonraker (Klipper) on Home Assistant.
-This way I can create a dashboard using HADashboard (AppDaemon) to monitoring my printer.
+## Install HACS Items
 
-To have all this sensors available on your Home Assistant you just need to copy ```moonraker.yaml``` to your packages folder and make sure you update the IP address. (Replace all instances of the text ```<moonraker-ip-address>``` in moonraker.yaml with the IP address of your installation.)
+Click HACS on the left column -> Frontend -> + Explore & Download Repositories
 
-If you are using this for multiple Printers in the same Home Assistant instance, be sure to adjust all the friendly names so that you don't end up with the same name-2 (unless that works for you).  Do this before you reload HA or HA will generate all -2 entities and you will need to go thru them in HA and change the friendly names there. (That gets kind of messy.)  The rest, rest_command, camera, and sensor values will need to be changed and the templates adjusted to match those names.  This is not intended to be used with multiple printers, but it is indeed possible.
+Search at the top for card-mod and mini-graph-card and then install them.
 
-I'm using a [7" Touchscreen](https://www.amazon.es/gp/product/B07K32M4LJ/ref=ppx_yo_dt_b_asin_title_o02_s00?ie=UTF8&psc=1) connected to a Raspberry Pi 4B.
-I also design a case for this screen and it's available on [Cults3D](https://cults3d.com/en/3d-model/gadget/touchscreen-7-case)
-
-![screenshot](screenshot.png?raw=true)
+In your configurations.yaml add this for card-mod
 
 
+```
+frontend:
+  extra_module_url:
+    - /community/lovelace-card-mod/card-mod.js
+```
 
+## Lovelace cards
+
+> **Horizontal Stack Card**
+
+For buttons to stop, FW reset, pause, resume and cancel. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/horizontal-stack-lovelace.yaml)
+
+> **Picture Entity Card (live stream webcam)**
+
+For livestream feed of webcam connected to MCU. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/picture-entity-webcam.yaml)
+
+> **Picture Entity Card (STL thumbnail)**
+
+Showing thumbnail of currently printing STL. Make sure slicer is configured for this. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/picture-entity-thumbnail.yaml)
+
+> **Glance Card (info and Sonoff Power Plug)**
+
+Showing info and button to turn on and off the Sonoff S26 Power Plug. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/glance-card.yaml)
+
+> **Gauge Card (printing progress)**
+
+Showing currently % of printing progress. Changes color depending on % of progress [Code card](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/gauge-card.yaml)
+
+> **Temperature Graph (hotend and bed)**
+
+Using mini-graph-card component, to show graph of hotend and bed temp. [Code card](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/mini-graph-card.yaml)
+
+![image](https://user-images.githubusercontent.com/1906575/215294547-034c104a-59be-4757-9a4a-606bba3b7d7b.png)
 
 ## Thank you
 
-<a href="https://www.buymeacoffee.com/denkyem" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png"></a>
+This is comprised of all three of these code bases below and a minor fix to add the .thumbs directory which was a recent change in Moonraker.
+
+**@denkyem**'s [Home Assistant Moonraker](https://github.com/denkyem/home-assistant-moonraker)
+**@SirGoodenough**'s [Home Assistant Moonraker](https://github.com/SirGoodenough/DEV-Moonraker-HA)
+**@mSarheed**'s [Home Assistant Moonraker](https://github.com/mSarheed/home-assistant-moonraker)
