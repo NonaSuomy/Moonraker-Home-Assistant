@@ -1,6 +1,34 @@
 # home-assistant-moonraker
 Integration between Moonraker and Home Assistant
 
+## Setup
+
+Make a folder in your home assistant directory
+
+```
+mkdir homeassistant/config/packages
+```
+
+Add packages directory to configuration.yaml
+
+```
+homeassistant:
+  packages: !include_dir_named packages
+```
+
+Put the moonraker.yaml in
+
+```
+cp moonraker.yaml homeassistant/config/packages/moonraker.yaml
+```
+
+Replace <moonraker-ip-address> with your ip in the moonraker.yaml file.
+
+```
+sed -i 's/<moonraker-ip-address>/10.0.0.69/g' input.txt
+```
+
+Restart Home Assistant then you should see the entities of your 3D Printer show up.
 
 A lot of Template sensors and rest sensors to have all the information I need from Moonraker (Klipper) on Home Assistant.
 This way I can create a dashboard using HADashboard (AppDaemon) to monitoring my printer.
