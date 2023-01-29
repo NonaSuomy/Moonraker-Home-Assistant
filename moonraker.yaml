@@ -44,7 +44,7 @@ sensor:
   - platform: rest
     name: printer_3d_sensor
     unique_id: "<moonraker-ip-address>3a0c25fa-297d-4c19-b03c-ddf04840682b"
-    resource: "http://<moonraker-ip-address>:7125/printer/objects/query?heater_bed&extruder&print_stats&toolhead&display_status&virtual_sdcard&gcode_move&filament_switch_sensor Filament"
+    resource: "http://<moonraker-ip-address>:7125/printer/objects/query?heater_bed&extruder&print_stats&toolhead&display_status&virtual_sdcard&gcode_move&filament_motion_sensor%20btt_smart_filament&temperature_sensor%20Chamber_Temp"
     json_attributes_path: "$.result.status"
     json_attributes:
       - heater_bed
@@ -54,7 +54,8 @@ sensor:
       - display_status
       - virtual_sdcard
       - gcode_move
-      - "filament_switch_sensor Filament"
+      - "filament_motion_sensor btt_smart_filament_sensor"
+      - "temperature_sensor Chamber_Temp"
     value_template: "OK"
     force_update: true
     scan_interval: 1
@@ -97,6 +98,17 @@ template:
       attributes:
         friendly_name: "Filament Detected"
   - sensor:
+    - name: 3d_printer_chamber_temp
+      unique_id: "<moonraker-ip-address>167e5dec-719c-42d3-9560-4f177573f741"
+      state: '{{ states.sensor.printer_3d_sensor.attributes["temperature_sensor Chamber_Temp"]["temperature"]  | float(0) | round(1) }}'
+      availability: >
+        {% set items = ['sensor.printer_3d_sensor'] %}
+        {{ expand(items)|rejectattr('state','in',['unknown','unavailable'])
+          |list|count == items|count }}
+      unit_of_measurement: "°C"
+      icon: mdi:thermometer
+      attributes:
+        friendly_name: "Chamber Actual"
     - name: 3d_printer_hotend_target
       unique_id: "<moonraker-ip-address>167e5dec-719c-42d3-9560-4f177573f740"
       state: '{{ states.sensor.printer_3d_sensor.attributes["extruder"]["target"]  | float(0) | round(1) }}'
@@ -170,7 +182,6 @@ template:
         {% set items = ['sensor.printer_3d_sensor'] %}
         {{ expand(items)|rejectattr('state','in',['unknown','unavailable'])
           |list|count == items|count }}
-      unit_of_measurement: "%"
       icon: >
         {% set val =  states.sensor.printer_3d_sensor.attributes["print_stats"]["state"]  %}
         {% if val == 'standby' %}
@@ -195,7 +206,6 @@ template:
         {% set items = ['sensor.printer_3d_sensor'] %}
         {{ expand(items)|rejectattr('state','in',['unknown','unavailable'])
           |list|count == items|count }}
-      unit_of_measurement: "%"
       icon: mdi:file
       attributes:
         friendly_name: "Current Print"
@@ -310,7 +320,6 @@ template:
         {% set items = ['sensor.printer_3d_file_metadata'] %}
         {{ expand(items)|rejectattr('state','in',['unknown','unavailable'])
           |list|count == items|count }}
-      unit_of_measurement: "mm"
       icon: mdi:image
       attributes:
         friendly_name: "Object Thumbnails"
