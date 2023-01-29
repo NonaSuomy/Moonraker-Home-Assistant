@@ -116,12 +116,14 @@ Click SUBMIT.
 
 If you need to flip your camera uncomment this section in the yaml
 
+```
 #    card_mod:
 #      style: |
 #        ha-card {
 #          transition: transform 0s;
 #          transform: rotate(180deg);
 #        }
+```
 
 ## Add The Thumbnail
 
