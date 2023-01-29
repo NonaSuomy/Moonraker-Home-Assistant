@@ -140,3 +140,4 @@ This is comprised of all three of these code bases below
 -BTT Smart Filament Runout Sensor
 -Chamber Temperature
 -Poorly flipped Webcam (glitches out)
+-Removed synthwave theme
