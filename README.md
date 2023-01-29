@@ -2,6 +2,8 @@
 
 Integration between Moonraker and Home Assistant 
 
+![image](https://user-images.githubusercontent.com/1906575/215313907-ba5221d9-6ccb-47f4-8656-ffac2d450bb8.png)
+
 ## Setup
 
 ### Requirements
@@ -109,7 +111,7 @@ Paste the yaml below into the Manual cards.
 
 > **Grid Card**
 
-For buttons to stop, FW reset, pause, resume and cancel. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/grid.yaml)
+Showing model preview window with file name, live camera and buttons to stop, FW reset, pause, resume and cancel. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/grid.yaml)
 
 > **Glance Card (Info and Sonoff Power Plug)**
 
@@ -123,10 +125,7 @@ Showing currently % of printing progress. Changes color depending on % of progre
 
 Using mini-graph-card component, to show graph of hotend and bed temp. [Code card](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/mini-graph-card.yaml)
 
-![image](https://user-images.githubusercontent.com/1906575/215313907-ba5221d9-6ccb-47f4-8656-ffac2d450bb8.png)
-
-
-## Thank you
+## Thank you!
 
 This is comprised of all three of these code bases below
 
