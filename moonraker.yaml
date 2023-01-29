@@ -315,7 +315,7 @@ template:
         friendly_name: "Total Layer"
     - name: 3d_printer_object_thumbnails
       unique_id: "<moonraker-ip-address>59b37837-b751-4d31-98c2-516a52edf833"
-      state: '{{ states.sensor.printer_3d_file_metadata.attributes["thumbnails"][1]["relative_path"] }}'
+      state: '{{ states.sensor.printer_3d_file_metadata.attributes["thumbnails"][2]["relative_path"] }}'
       availability: >
         {% set items = ['sensor.printer_3d_file_metadata'] %}
         {{ expand(items)|rejectattr('state','in',['unknown','unavailable'])
