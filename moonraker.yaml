@@ -14,7 +14,7 @@ rest:
 camera:
   - platform: generic
     name: "3D Printer Thumbnail"
-    still_image_url: http://<moonraker-ip-address>:7125/server/files/gcodes/.thumbs{{ states("sensor.3d_printer_object_thumbnails") }}
+    still_image_url: http://<moonraker-ip-address>:7125/server/files/gcodes/{{ states("sensor.3d_printer_object_thumbnails") }}
     verify_ssl: false
 
 #  This no longer works broken in current builds https://www.home-assistant.io/blog/2022/05/04/release-20225/#breaking-changes -> MJPEG IP Camera
