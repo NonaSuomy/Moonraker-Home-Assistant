@@ -17,7 +17,6 @@ entities:
     icon: mdi:power
     tap_action:
       action: toggle
-theme: synthwave
 columns: 4
 show_name: true
 show_icon: true
