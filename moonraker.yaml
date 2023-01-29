@@ -17,11 +17,13 @@ camera:
     still_image_url: http://<moonraker-ip-address>:7125/server/files/gcodes/.thumbs{{ states("sensor.3d_printer_object_thumbnails") }}
     verify_ssl: false
 
-  - platform: mjpeg
-    name: "3D Printer Camera"
-    still_image_url: http://<moonraker-ip-address>/webcam/?action=snapshot
-    mjpeg_url: http://<moonraker-ip-address>/webcam/?action=stream
-    verify_ssl: false
+#  This no longer works broken in current builds https://www.home-assistant.io/blog/2022/05/04/release-20225/#breaking-changes -> MJPEG IP Camera
+#  Directions in the README.md for how to add the MJPEG IP Camera now.
+#  - platform: mjpeg
+#    name: "3D Printer Camera"
+#    still_image_url: http://<moonraker-ip-address>/webcam/?action=snapshot
+#    mjpeg_url: http://<moonraker-ip-address>/webcam/?action=stream
+#    verify_ssl: false
 
 rest_command:
   3d_printer_emergency_stop:
