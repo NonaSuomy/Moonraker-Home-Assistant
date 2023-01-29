@@ -137,7 +137,7 @@ Click + Add Card
   
 Scroll to the bottom and click Manual
 
-Paste the yaml below into the Manual cards.
+Paste the yaml content below into the Manual cards.
 
 > **Grid Card**
 
