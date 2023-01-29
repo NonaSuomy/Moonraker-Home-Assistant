@@ -17,15 +17,15 @@ cards:
     show_state: false
     show_name: false
     camera_view: live
-    card_mod:
-      style: |
-        ha-card {
-          transition: transform 0s;
-          transform: rotate(180deg);
-        }
-        ha-dialog {
-          transform: rotate(180deg);
-        }
+#    card_mod:
+#      style: |
+#        ha-card {
+#          transition: transform 0s;
+#          transform: rotate(180deg);
+#        }
+#        ha-dialog {
+#          transform: rotate(180deg);
+#       }
   - type: horizontal-stack
     cards:
       - type: button
