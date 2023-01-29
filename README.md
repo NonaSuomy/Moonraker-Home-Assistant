@@ -114,6 +114,10 @@ Uncheck Verify SSL certificate.
 
 Click SUBMIT.
 
+## Add The Thumbnail
+
+Thumbnail will be added properly now with the grid.yaml paste snippet.
+
 ## Lovelace cards
 
 Click Edit Dashboard
