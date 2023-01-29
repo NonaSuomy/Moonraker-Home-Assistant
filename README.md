@@ -123,12 +123,20 @@ Showing currently % of printing progress. Changes color depending on % of progre
 
 Using mini-graph-card component, to show graph of hotend and bed temp. [Code card](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/mini-graph-card.yaml)
 
-![image](https://user-images.githubusercontent.com/1906575/215294846-e06c71cd-b173-4740-9d7d-12c48e15591e.png)
+![image](https://user-images.githubusercontent.com/1906575/215313907-ba5221d9-6ccb-47f4-8656-ffac2d450bb8.png)
+
 
 ## Thank you
 
-This is comprised of all three of these code bases below and a minor fix to add the .thumbs directory which was a recent change in Moonraker.
+This is comprised of all three of these code bases below
 
 **@denkyem**'s [Home Assistant Moonraker](https://github.com/denkyem/home-assistant-moonraker)
 **@SirGoodenough**'s [Home Assistant Moonraker](https://github.com/SirGoodenough/DEV-Moonraker-HA)
 **@mSarheed**'s [Home Assistant Moonraker](https://github.com/mSarheed/home-assistant-moonraker)
+
+## Few added tweaks 
+
+-Larger quality thumbnails.
+-BTT Smart Filament Runout Sensor
+-Chamber Temperature
+-Poorly flipped Webcam (glitches out)
