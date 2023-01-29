@@ -1,4 +1,4 @@
-# home-assistant-moonraker
+# moonraker-home-assistant
 
 Integration between Moonraker and Home Assistant 
 
