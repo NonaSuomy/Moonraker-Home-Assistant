@@ -1,17 +1,43 @@
 type: glance
 entities:
+  - entity: sensor.3d_printer_state_message
+    name: State Message
   - entity: sensor.3d_printer_state
     name: State
   - entity: sensor.3d_printer_current_progress
+    name: Current Progress
   - entity: sensor.3d_printer_time_remaining
     name: Remaining
   - entity: sensor.3d_printer_print_time
     name: Elapsed
   - entity: sensor.3d_printer_current_layer
+    name: Current Layer
     icon: mdi:layers-edit
   - entity: sensor.3d_printer_total_layers
+    name: Total Layers
     icon: mdi:layers-triple
   - entity: sensor.3d_printer_eta
+    name: ETA
+  - entity: binary_sensor.3d_printer_filament
+    name: Filament Sensor
+  - entity: sensor.3d_printer_current_height
+    name: Current Height
+  - entity: sensor.3d_printer_object_height
+    name: Object Height
+  - entity: sensor.3d_printer_layer_height
+    name: Layer Height
+  - entity: sensor.3d_printer_hotend_actual
+    name: Hotend Temp
+  - entity: sensor.3d_printer_hotend_target
+    name: Hotend Target
+  - entity: sensor.3d_printer_hotend_power
+    name: Hotend Power
+  - entity: sensor.3d_printer_bed_actual
+    name: Bed Temp
+  - entity: sensor.3d_printer_bed_target
+    name: Bed Target
+  - entity: sensor.3d_printer_bed_power
+    name: Bed Power
   - entity: switch.sonoff_3d_printer_outlet
     name: Power
     icon: mdi:power
