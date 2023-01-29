@@ -7,7 +7,7 @@ hours_to_show: 2
 points_per_hour: 60
 show:
   labels: true
-  fill: false
+  fill: true
 entities:
   - entity: sensor.3d_printer_hotend_actual
     name: Hotend
@@ -15,3 +15,6 @@ entities:
   - entity: sensor.3d_printer_bed_actual
     name: Bed
     color: red
+  - entity: sensor.3d_printer_chamber_temp
+    name: Chamber
+    color: purple
