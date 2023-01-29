@@ -92,12 +92,27 @@ Search at the top for card-mod and mini-graph-card and then install them.
 
 In your configurations.yaml add this for card-mod
 
-
 ```
 frontend:
   extra_module_url:
     - /community/lovelace-card-mod/card-mod.js
 ```
+
+## Add The MJPEG Camera
+
+Click Settings -> Devices and Services -> + Add Integration
+
+Type MJPEG IP Camera and click it.
+
+Name: 3d printer camera
+
+MJPEG URL: <moonraker-ip-address>/webcam/?action=stream
+
+Still Image URL: <moonraker-ip-address>/webcam/?action=snapshot
+
+Uncheck Verify SSL certificate.
+
+Click SUBMIT.
 
 ## Lovelace cards
 
@@ -139,5 +154,5 @@ This is comprised of all three of these code bases below
 - Larger quality thumbnails.
 - BTT Smart Filament Runout Sensor.
 - Chamber Temperature.
-- Poorly flipped Webcam (glitches out).
+- Flipped Webcam.
 - Removed synthwave theme.
