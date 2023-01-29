@@ -11,11 +11,13 @@ rest:
         - thumbnails
       value_template: "OK"
 
-camera:
-  - platform: generic
-    name: "3D Printer Thumbnail"
-    still_image_url: http://<moonraker-ip-address>:7125/server/files/gcodes/{{ states("sensor.3d_printer_object_thumbnails") }}
-    verify_ssl: false
+#camera:
+# Loading generic IP camera via configuration.yaml is deprecated, it will be automatically imported. Once you have confirmed correct operation, please remove 'generic' (IP camera) section(s) from configuration.yaml
+# Directions in the README.md for how to add the Thumbnail now.
+#  - platform: generic
+#    name: "3D Printer Thumbnail"
+#    still_image_url: http://<moonraker-ip-address>:7125/server/files/gcodes/{{ states("sensor.3d_printer_object_thumbnails") }}
+#    verify_ssl: false
 
 #  This no longer works broken in current builds https://www.home-assistant.io/blog/2022/05/04/release-20225/#breaking-changes -> MJPEG IP Camera
 #  Directions in the README.md for how to add the MJPEG IP Camera now.
