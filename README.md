@@ -99,6 +99,14 @@ frontend:
 
 ## Lovelace cards
 
+Click Edit Dashboard
+
+Click + Add Card
+  
+Scroll to the bottom and click Manual
+
+Paste the yaml below into the Manual cards.
+
 > **Horizontal Stack Card**
 
 For buttons to stop, FW reset, pause, resume and cancel. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/horizontal-stack-lovelace.yaml)
@@ -134,10 +142,11 @@ This is comprised of all three of these code bases below
 **@SirGoodenough**'s [Home Assistant Moonraker](https://github.com/SirGoodenough/DEV-Moonraker-HA)
 **@mSarheed**'s [Home Assistant Moonraker](https://github.com/mSarheed/home-assistant-moonraker)
 
-## Few added tweaks 
-
--Larger quality thumbnails.
--BTT Smart Filament Runout Sensor
--Chamber Temperature
--Poorly flipped Webcam (glitches out)
--Removed synthwave theme
+## Few added tweaks
+  
+- Added more directions to readme and updated picture.
+- Larger quality thumbnails.
+- BTT Smart Filament Runout Sensor.
+- Chamber Temperature.
+- Poorly flipped Webcam (glitches out).
+- Removed synthwave theme.
