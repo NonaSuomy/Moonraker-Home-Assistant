@@ -130,9 +130,9 @@ Using mini-graph-card component, to show graph of hotend and bed temp. [Code car
 
 This is comprised of all three of these code bases below
 
-**@denkyem**'s [Home Assistant Moonraker](https://github.com/denkyem/home-assistant-moonraker)
-**@SirGoodenough**'s [Home Assistant Moonraker](https://github.com/SirGoodenough/DEV-Moonraker-HA)
-**@mSarheed**'s [Home Assistant Moonraker](https://github.com/mSarheed/home-assistant-moonraker)
+- **@denkyem**'s [Home Assistant Moonraker](https://github.com/denkyem/home-assistant-moonraker)
+- **@SirGoodenough**'s [Home Assistant Moonraker](https://github.com/SirGoodenough/DEV-Moonraker-HA)
+- **@mSarheed**'s [Home Assistant Moonraker](https://github.com/mSarheed/home-assistant-moonraker)
 
 ## Few added tweaks
   
