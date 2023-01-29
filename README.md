@@ -107,19 +107,11 @@ Scroll to the bottom and click Manual
 
 Paste the yaml below into the Manual cards.
 
-> **Horizontal Stack Card**
+> **Grid Card**
 
-For buttons to stop, FW reset, pause, resume and cancel. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/horizontal-stack-lovelace.yaml)
+For buttons to stop, FW reset, pause, resume and cancel. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/grid.yaml)
 
-> **Picture Entity Card (live stream webcam)**
-
-For livestream feed of webcam connected to MCU. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/picture-entity-webcam.yaml)
-
-> **Picture Entity Card (STL thumbnail)**
-
-Showing thumbnail of currently printing STL. Make sure slicer is configured for this. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/picture-entity-thumbnail.yaml)
-
-> **Glance Card (info and Sonoff Power Plug)**
+> **Glance Card (Info and Sonoff Power Plug)**
 
 Showing info and button to turn on and off the Sonoff S26 Power Plug. [Card code](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/glance-card.yaml)
 
