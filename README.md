@@ -106,9 +106,9 @@ Type MJPEG IP Camera and click it.
 
 Name: 3d printer camera
 
-MJPEG URL: <moonraker-ip-address>/webcam/?action=stream
+MJPEG URL: `<moonraker-ip-address>/webcam/?action=stream`
 
-Still Image URL: <moonraker-ip-address>/webcam/?action=snapshot
+Still Image URL: `<moonraker-ip-address>/webcam/?action=snapshot`
 
 Uncheck Verify SSL certificate.
 
