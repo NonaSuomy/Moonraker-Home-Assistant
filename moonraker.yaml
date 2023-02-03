@@ -80,7 +80,7 @@ sensor:
     name: klipper_preview_path
     unique_id: "<moonraker-ip-address>fd0ae36c-0d51-4392-a18d-89861d536ba4"
     resource_template: "http://<moonraker-ip-address>:7125/server/files/metadata?filename={{ states(('sensor.3d_printer_current_print')) }}"
-    json_attributes_path: "$.result.thumbnails.[1]"
+    json_attributes_path: "$.result.thumbnails.[2]"
     json_attributes:
       - relative_path
       - width
