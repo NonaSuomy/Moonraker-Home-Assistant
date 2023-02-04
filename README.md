@@ -159,12 +159,17 @@ If you want to use the more acurate layer counter "Actual Layer" you must add to
 
 In the "Start" GCode
 
+```
 SET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]
 SET_PRINT_STATS_INFO CURRENT_LAYER=0
-
+```
+  
 In the “Before layer change" GCode
-SET_PRINT_STATS_INFO CURRENT_LAYER=[layer_num]
 
+```
+SET_PRINT_STATS_INFO CURRENT_LAYER=[layer_num]
+```
+  
 ## Thank you!
 
 This is comprised of all three of these code bases below
