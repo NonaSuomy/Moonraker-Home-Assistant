@@ -1,6 +1,6 @@
 rest:
   scan_interval: 5
-  resource_template: "http://<moonraker-ip-address>:7125/server/files/metadata?filename={{ states(('sensor.3d_printer_current_print')) }}"
+  resource_template: "http://<moonraker-ip-address>:7125/server/files/metadata?filename={{ states(('sensor.3d_printer_current_print')) | urlencode }}"
   sensor:
     - name: printer_3d_file_metadata
       unique_id: "<moonraker-ip-address>5ec44d90-419c-419c-802d-d34071639c08"
@@ -79,7 +79,7 @@ sensor:
     scan_interval: 15
     name: klipper_preview_path
     unique_id: "<moonraker-ip-address>fd0ae36c-0d51-4392-a18d-89861d536ba4"
-    resource_template: "http://<moonraker-ip-address>:7125/server/files/metadata?filename={{ states(('sensor.3d_printer_current_print')) }}"
+    resource_template: "http://<moonraker-ip-address>:7125/server/files/metadata?filename={{ states(('sensor.3d_printer_current_print')) | urlencode }}"
     json_attributes_path: "$.result.thumbnails.[2]"
     json_attributes:
       - relative_path
@@ -317,9 +317,22 @@ template:
       icon: mdi:counter
       attributes:
         friendly_name: "Total Layer"
+    - name: 3d_printer_actual_layer
+      unique_id: "<moonraker-ip-address>167e5dec-719c-42d3-9560-4f177573f742"
+      state: '{{ states.sensor.printer_3d_sensor.attributes.print_stats["info"]["current_layer"] }} / {{ states.sensor.printer_3d_sensor.attributes.print_stats["info"]["total_layer"] }}'
+      availability: >
+        {% set items = ['sensor.printer_3d_sensor'] %}
+        {{ expand(items)|rejectattr('state','in',['unknown','unavailable'])
+          |list|count == items|count }}
+      icon: mdi:counter
+      attributes:
+        friendly_name: "Actual Layer"
     - name: 3d_printer_object_thumbnails
       unique_id: "<moonraker-ip-address>59b37837-b751-4d31-98c2-516a52edf833"
-      state: '{{ states.sensor.printer_3d_file_metadata.attributes["thumbnails"][2]["relative_path"] }}'
+      state: >
+        {% set dir = states('sensor.3d_printer_current_print') %}
+        {% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][2]["relative_path"] %}
+        {{ (dir.split('/')[:-1] + [img]) | join('/') }}
       availability: >
         {% set items = ['sensor.printer_3d_file_metadata'] %}
         {{ expand(items)|rejectattr('state','in',['unknown','unavailable'])
