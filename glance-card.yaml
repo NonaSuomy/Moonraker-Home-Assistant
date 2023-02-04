@@ -10,6 +10,9 @@ entities:
     name: Remaining
   - entity: sensor.3d_printer_print_time
     name: Elapsed
+  - entity: sensor.3d_printer_actual_layer
+    name: Actual Layer
+    icon: mdi:layers-triple
   - entity: sensor.3d_printer_current_layer
     name: Current Layer
     icon: mdi:layers-edit
