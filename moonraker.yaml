@@ -246,7 +246,7 @@ template:
         friendly_name: "Time Remaining"
     - name: 3d_printer_eta
       unique_id: "<moonraker-ip-address>a2b57068-9a32-4d2c-8cc9-57d2389a9082"
-      state: '{{ (as_timestamp(now())+2*60*60+((states.sensor.printer_3d_sensor.attributes["print_stats"]["print_duration"]/states.sensor.printer_3d_sensor.attributes["display_status"]["progress"]- states.sensor.printer_3d_sensor.attributes["print_stats"]["print_duration"]) if states.sensor.printer_3d_sensor.attributes["display_status"]["progress"]>0 else 0)) | timestamp_custom("%H:%M:%S", 0)}}'
+      state: '{{ (as_timestamp(now())((states.sensor.printer_3d_sensor.attributes["print_stats"]["print_duration"]/states.sensor.printer_3d_sensor.attributes["display_status"]["progress"]- states.sensor.printer_3d_sensor.attributes["print_stats"]["print_duration"]) if states.sensor.printer_3d_sensor.attributes["display_status"]["progress"]>0 else 0)) | timestamp_custom("%H:%M:%S", 1)}}'
       availability: >
         {% set items = ['sensor.printer_3d_sensor'] %}
         {{ expand(items)|rejectattr('state','in',['unknown','unavailable'])
