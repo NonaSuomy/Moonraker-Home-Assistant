@@ -324,7 +324,7 @@ template:
         {% set items = ['sensor.printer_3d_sensor'] %}
         {{ expand(items)|rejectattr('state','in',['unknown','unavailable'])
           |list|count == items|count }}
-      icon: mdi:counter
+      icon: mdi:layers-triple
       attributes:
         friendly_name: "Actual Layer"
     - name: 3d_printer_object_thumbnails
