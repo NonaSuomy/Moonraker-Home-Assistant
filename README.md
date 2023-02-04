@@ -155,6 +155,16 @@ Showing currently % of printing progress. Changes color depending on % of progre
 
 Using mini-graph-card component, to show graph of hotend and bed temp. [Code card](https://github.com/NonaSuomy/Moonraker-Home-Assistant/blob/main/mini-graph-card.yaml)
 
+If you want to use the more acurate layer counter "Actual Layer" you must add to your slicer:
+
+In the "Start" GCode
+
+SET_PRINT_STATS_INFO TOTAL_LAYER=[total_layer_count]
+SET_PRINT_STATS_INFO CURRENT_LAYER=0
+
+In the “Before layer change" GCode
+SET_PRINT_STATS_INFO CURRENT_LAYER=[layer_num]
+
 ## Thank you!
 
 This is comprised of all three of these code bases below
@@ -167,6 +177,8 @@ This is comprised of all three of these code bases below
   
 - Added more directions to readme and updated picture.
 - Larger quality thumbnails.
+- Fixed urlencode, multi, and no directory thumbnails Thanks @davisgoodman @petro @NSX
+- Added Actual Layer Sensor to show a more accurate layer counter. @davisgoodman idea
 - BTT Smart Filament Runout Sensor.
 - Chamber Temperature.
 - Flipped Webcam.
