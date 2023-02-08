@@ -331,7 +331,7 @@ template:
       unique_id: "<moonraker-ip-address>59b37837-b751-4d31-98c2-516a52edf833"
       state: >
         {% set dir = states('sensor.3d_printer_current_print') %}
-        {% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][2]["relative_path"] %}
+        {% set img = state_attr('sensor.printer_3d_file_metadata', 'thumbnails')[2].relative_path %}
         {{ (dir.split('/')[:-1] + [img]) | join('/') }}
       availability: >
         {% set items = ['sensor.printer_3d_file_metadata'] %}
