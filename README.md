@@ -162,6 +162,49 @@ Click the "Name" of it and rename it to: 3D Printer Thumbnail
 
 Click Update.
 
+*Note:* Depending on how many thumbnails your slicer creates you may have to change this array value from [2] to [1] in two places in the mooonraker.yaml mine generates 3
+
+```
+[0] 32x32
+[1] 64x64
+[2] 400x300
+```
+
+```
+  - platform: rest
+    scan_interval: 15
+    name: klipper_preview_path
+    unique_id: "<moonraker-ip-address>fd0ae36c-0d51-4392-a18d-89861d536ba4"
+    resource_template: "http://<moonraker-ip-address>:7125/server/files/metadata?filename={{ states(('sensor.3d_printer_current_print')) | urlencode }}"
+    json_attributes_path: "$.result.thumbnails.[2]"
+    json_attributes:
+      - relative_path
+      - width
+      - height
+      - size
+    value_template: "OK"
+```
+
+`json_attributes_path: "$.result.thumbnails.[2]"` -> `json_attributes_path: "$.result.thumbnails.[1]"`
+
+```
+    - name: 3d_printer_object_thumbnails
+      unique_id: "<moonraker-ip-address>59b37837-b751-4d31-98c2-516a52edf833"
+      state: >
+        {% set dir = states('sensor.3d_printer_current_print') %}
+        {% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][2]["relative_path"] %}
+        {{ (dir.split('/')[:-1] + [img]) | join('/') }}
+      availability: >
+        {% set items = ['sensor.printer_3d_file_metadata'] %}
+        {{ expand(items)|rejectattr('state','in',['unknown','unavailable'])
+          |list|count == items|count }}
+      icon: mdi:image
+      attributes:
+        friendly_name: "Object Thumbnails"
+```
+
+`{% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][2]["relative_path"] %}` -> `{% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][1]["relative_path"] %}`
+
 ## Lovelace cards
 
 Click Edit Dashboard
