@@ -162,13 +162,15 @@ Click the "Name" of it and rename it to: 3D Printer Thumbnail
 
 Click Update.
 
-*Note:* Depending on how many thumbnails your slicer creates you may have to change this array value from [2] to [1] in two places in the mooonraker.yaml mine generates 3
+**Note:** *Depending on how many thumbnails your slicer creates you may have to change this array value from `[2]` to `[1]` in two places in the `mooonraker.yaml` mine generates 3.*
 
 ```
 [0] 32x32
 [1] 64x64
 [2] 400x300
 ```
+
+Spot 1
 
 ```
   - platform: rest
@@ -186,6 +188,8 @@ Click Update.
 ```
 
 `json_attributes_path: "$.result.thumbnails.[2]"` -> `json_attributes_path: "$.result.thumbnails.[1]"`
+
+Spot 2
 
 ```
     - name: 3d_printer_object_thumbnails
