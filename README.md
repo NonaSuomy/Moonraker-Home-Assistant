@@ -104,7 +104,7 @@ Click Settings -> Devices and Services -> + Add Integration
 
 Type MJPEG IP Camera and click it.
 
-Name: 3d printer camera
+Name: 3D Printer Camera
 
 MJPEG URL: `<moonraker-ip-address>/webcam/?action=stream`
 
@@ -125,9 +125,42 @@ If you need to flip your camera uncomment this section in the yaml
 #        }
 ```
 
-## Add The Thumbnail
+## Add The Thumbnail 
 
-Thumbnail will be added properly now with the grid.yaml paste snippet.
+Click Settings -> Devices and Services -> + Add Integration
+
+Type Generic Camera and click it.
+
+In the Generic Camera → Still image URL box put:
+
+http://<moonraker-ip-address>:7125/server/files/gcodes/{{ states("sensor.3d_printer_object_thumbnails") }}
+
+![image](https://user-images.githubusercontent.com/1906575/217470789-4a640fd2-a8d8-438b-9f31-33a660c91538.png)
+
+Then click submit.
+
+Click check box on "This image looks good" then submit again.
+
+```
+Success!
+Options successfully saved.
+```
+
+Click Finish.
+
+It will unfortunatly add a camera with its name as the IP address.
+
+Click Settings -> Entities
+
+Find the camera.IP in the "Entity ID" column you made.
+
+Click the Entity ID of it and rename it to: camera.3d_printer_thumbnail
+
+Click the "Name" of it and rename it to: 3D Printer Thumbnail
+
+![image](https://user-images.githubusercontent.com/1906575/217494326-3ec35b96-fd07-422f-a75f-90b1df8985ca.png)
+
+Click Update.
 
 ## Lovelace cards
 
