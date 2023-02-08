@@ -133,7 +133,7 @@ Type Generic Camera and click it.
 
 In the Generic Camera → Still image URL box put:
 
-http://<moonraker-ip-address>:7125/server/files/gcodes/{{ states("sensor.3d_printer_object_thumbnails") }}
+`http://<moonraker-ip-address>:7125/server/files/gcodes/{{ states("sensor.3d_printer_object_thumbnails") }}`
 
 ![image](https://user-images.githubusercontent.com/1906575/217470789-4a640fd2-a8d8-438b-9f31-33a660c91538.png)
 
