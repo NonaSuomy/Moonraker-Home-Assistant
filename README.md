@@ -209,6 +209,21 @@ Click Update.
 
 ~~`{% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][2]["relative_path"] %}` -> `{% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][1]["relative_path"] %}`~~
 
+## Add a new dashboard page
+
+Top right click the hamburger button 3 dots.
+
+Click Edit Dashboard.
+
+Next to your dashboard icon at the top you should now see a + click the +
+
+Title: 3DPrinter
+Icon: mdi:printer-3d
+
+Click Save.
+
+Your new blank dashboard tab should show up where you will add all the Lovelace cards below.
+
 ## Lovelace cards
 
 Click Edit Dashboard
