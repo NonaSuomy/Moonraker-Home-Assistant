@@ -278,7 +278,7 @@ This is comprised of all three of these code bases below
   
 - Added more directions to readme and updated picture.
 - Larger quality thumbnails.
-- Fixed urlencode, multi, and no directory thumbnails Thanks @davisgoodman @petro @NSX
+- Fixed urlencode, multi, and no directory thumbnails Thanks @davisgoodman @petro @NSX @TheFes
 - Added Actual Layer Sensor to show a more accurate layer counter. @davisgoodman idea
 - BTT Smart Filament Runout Sensor.
 - Chamber Temperature.
