@@ -209,7 +209,7 @@ Click Update.
 
 ~~`{% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][2]["relative_path"] %}` -> `{% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][1]["relative_path"] %}`~~
 
-## Add a new dashboard page
+## Add a new dashboard view page
 
 Top right click the hamburger button 3 dots.
 
@@ -223,7 +223,7 @@ Icon: mdi:printer-3d
 
 Click Save.
 
-Your new blank dashboard tab should show up where you will add all the Lovelace cards below.
+Your new blank dashboard view page should show up where you will add all the Lovelace cards below.
 
 ## Lovelace cards
 
