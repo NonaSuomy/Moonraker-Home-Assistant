@@ -218,6 +218,7 @@ Click Edit Dashboard.
 Next to your dashboard icon at the top you should now see a + click the +
 
 Title: 3DPrinter
+  
 Icon: mdi:printer-3d
 
 Click Save.
