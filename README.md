@@ -162,7 +162,7 @@ Click the "Name" of it and rename it to: 3D Printer Thumbnail
 
 Click Update.
 
-**Note:** *Depending on how many thumbnails your slicer creates you may have to change this array value from `[2]` to `[1]` in two places in the `mooonraker.yaml` mine generates 3.*
+~~**Note:** *Depending on how many thumbnails your slicer creates you may have to change this array value from `[2]` to `[1]` in two places in the `mooonraker.yaml` mine generates 3.*~~ **Fixed in current code! You shouldn't have to do this.**
 
 ```
 [0] 32x32
@@ -170,7 +170,7 @@ Click Update.
 [2] 400x300
 ```
 
-Spot 1
+~~Spot 1~~
 
 ```
   - platform: rest
@@ -187,9 +187,9 @@ Spot 1
     value_template: "OK"
 ```
 
-`json_attributes_path: "$.result.thumbnails.[2]"` -> `json_attributes_path: "$.result.thumbnails.[1]"`
+~~`json_attributes_path: "$.result.thumbnails.[2]"` -> `json_attributes_path: "$.result.thumbnails.[1]"`~~
 
-Spot 2
+~~Spot 2~~
 
 ```
     - name: 3d_printer_object_thumbnails
@@ -207,7 +207,7 @@ Spot 2
         friendly_name: "Object Thumbnails"
 ```
 
-`{% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][2]["relative_path"] %}` -> `{% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][1]["relative_path"] %}`
+~~`{% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][2]["relative_path"] %}` -> `{% set img = states.sensor.printer_3d_file_metadata.attributes["thumbnails"][1]["relative_path"] %}`~~
 
 ## Lovelace cards
 
