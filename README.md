@@ -285,3 +285,4 @@ This is comprised of all three of these code bases below
 - Flipped Webcam.
 - Removed multiple unnecessary: unit_of_measurement
 - Removed synthwave theme.
+- Added Printername.
