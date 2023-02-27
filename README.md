@@ -2,7 +2,7 @@
 
 Integration between Moonraker and Home Assistant 
 
-![image](https://user-images.githubusercontent.com/1906575/221646096-c7ece1ca-7351-4b24-897b-809230be62d9.png)
+![image](https://user-images.githubusercontent.com/1906575/221646487-3a7efd56-8eca-4765-bb70-3a70dae1f087.png)
 
 ## Setup
 
