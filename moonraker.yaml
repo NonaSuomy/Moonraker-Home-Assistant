@@ -99,7 +99,7 @@ template:
       attributes:
         friendly_name: "Filament Detected"
   - sensor:
-      - name: 3d_printer_printername
+    - name: 3d_printer_printername
       unique_id: "<moonraker-ip-address>3a0f3144-a801-422f-adb6-e2ed35796074"
       state: '{{ states.sensor.printer_3d_server.attributes["printername"]}}'
       availability: >
